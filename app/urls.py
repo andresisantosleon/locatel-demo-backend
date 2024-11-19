@@ -9,4 +9,8 @@ urlpatterns = [
         "api/customer/",
         include(("customer.urls", "customer"), namespace="api_customer"),
     ),
+    path(
+        "api/sale/",
+        include(("sale.urls", "sale"), namespace="api_sale"),
+    ),
 ]
