@@ -9,6 +9,8 @@ class CustomerSerializer(serializers.ModelSerializer):
             "email",
             "first_name",
             "last_name",
+            "phone",
+            "address",
             "document_type",
             "document_number",
         )

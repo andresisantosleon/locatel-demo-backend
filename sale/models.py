@@ -10,8 +10,6 @@ class Product(models.Model):
     
     iva = models.FloatField(verbose_name='porcentaje IVA',default=0,blank=True, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
-    has_iva= models.BooleanField(verbose_name='tiene IVA')
-
     class Meta:
         ordering = ('-id',)
         verbose_name = 'producto'

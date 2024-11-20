@@ -4,13 +4,7 @@ from sale.utils import create_sale
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    def validate(self, data):
-        if data.get("has_iva") and not data.get("iva"):
-            raise serializers.ValidationError(
-                "If the product has IVA, the IVA field is required"
-            )
-
-        return data
+    iva=serializers.ModelField(model_field=Product()._meta.get_field('iva'), required=False)
 
     class Meta:
         model = Product
@@ -19,7 +13,6 @@ class ProductSerializer(serializers.ModelSerializer):
             "name",
             "price",
             "iva",
-            "has_iva",
         )
 
 
